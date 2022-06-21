@@ -21,7 +21,7 @@ static 폴더 생성 후 정적 파일(css/js) 설정 방법(2가지)
 "<script src="{{ url_for("static", filename="js/main.js") }}"></script>"  
  
 2.
-"<link rel="stylesheet" href="/static/css/style.css">"  
+# <link rel="stylesheet" href="/static/css/style.css">"  
 
 2번 방법으로 불러올 시 호스팅 서비스별로 충돌이 발생 할 가능성이 있다고 한다. Python에서 권장하는 방법인 url_for 키워드를 통해서 정적 파일을 불러와야한다.
 
