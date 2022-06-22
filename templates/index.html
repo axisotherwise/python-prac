@@ -3,7 +3,22 @@
   <title></title>
   <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
 <body>
-  <h3>here</h3>
+  {% if login == True %}
+  <h3>Login success</h3>
+  <div>이메일 {{ email }}</div>
+  <div><button>Logout</button></div>
+
+  {% else %}
+  <form action="/login" method="get">
+    <div>
+      <input type="text" name="email">
+    </div>
+    <div>
+      <input type="password" name="password">
+    </div>
+    <button>Login</button>
+  </from>
+  {% endif %}
 <script src="{{ url_for("static", filename="js/main.js") }}"></script>
 </body>
 </head>
