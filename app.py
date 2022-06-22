@@ -1,21 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask
 
-# 플라스크 객체 인스턴스 생성
 app = Flask(__name__)
 
-# 라우터
-# def === function
-@app.route("/")
-def index():
-  return "here"
+@app.route('/')
 
-@app.route("/user")
-def userRender():
-  return render_template("index.html")
-
-# server listen
+@app.route('/home')
+def home():
+    return 'Hello, World!'
+  
+@app.route('/user')
+def user():
+    return 'Hello, User!'
+  
 if __name__ == '__main__':
-  app.run(
-    port = "2000",
-    debug = True
-  )
+    app.run(debug=True)
