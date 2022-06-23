@@ -1,15 +1,17 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+</head>
 <body>
   {% if login == True %}
-  <h3>Login success</h3>
-  <div>이메일 {{ email }}</div>
-  <div><button>Logout</button></div>
-
+  <h3>Success login</h3>
+  <div>사용자 이메일 {{ email }}</div>
+  <div>사용자 비밀번호 {{ password }}</div>
+  <button class="logout">Logout</button>
+  
   {% else %}
-  <form action="/login" method="get">
+  <h3>로그인</h3>
+  <form action="/login" method="post">
     <div>
       <input type="text" name="email">
     </div>
@@ -17,8 +19,7 @@
       <input type="password" name="password">
     </div>
     <button>Login</button>
-  </from>
+  </form>
   {% endif %}
-<script src="{{ url_for("static", filename="js/main.js") }}"></script>
+<script src="{{ url_for("static", filename="./js/index.js") }}"></script>
 </body>
-</head>
